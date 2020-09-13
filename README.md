@@ -8,7 +8,7 @@ Pfsense filter logs.
 * Select "Manage Extractors" for the input that receives Pfsense logs
 * Select "Actions" menu
 * Select "Import extractors"
-* Paste the contents of [extractors.json](extractor.json) into the text box
+* Paste the contents of [extractors.json](extractors.json) into the text box
 * Select the button "Add extractors to input"
 
 # Usage
