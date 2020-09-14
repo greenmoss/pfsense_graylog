@@ -4,7 +4,7 @@
       "title": "pfsense log-data",
       "extractor_type": "regex",
       "converters": [],
-      "order": 0,
+      "order": 4,
       "cursor_strategy": "copy",
       "source_field": "message",
       "target_field": "pfsense_log_data",
@@ -25,7 +25,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 5,
       "cursor_strategy": "cut",
       "source_field": "pfsense_log_data",
       "target_field": "pfsense_common_log_data",
@@ -39,7 +39,7 @@
       "title": "pfsense ipv4",
       "extractor_type": "grok",
       "converters": [],
-      "order": 0,
+      "order": 6,
       "cursor_strategy": "copy",
       "source_field": "pfsense_log_data",
       "target_field": "",
@@ -54,7 +54,7 @@
       "title": "pfsense ipv6",
       "extractor_type": "grok",
       "converters": [],
-      "order": 0,
+      "order": 7,
       "cursor_strategy": "copy",
       "source_field": "pfsense_log_data",
       "target_field": "",
@@ -76,7 +76,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 8,
       "cursor_strategy": "copy",
       "source_field": "ipv6_specific_data",
       "target_field": "ipv6_specific_data",
@@ -95,7 +95,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 9,
       "cursor_strategy": "copy",
       "source_field": "ipv4_specific_data",
       "target_field": "ipv4_specific_data",
@@ -114,7 +114,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 10,
       "cursor_strategy": "cut",
       "source_field": "protocol_specific_data",
       "target_field": "udp_data",
@@ -133,7 +133,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 11,
       "cursor_strategy": "cut",
       "source_field": "protocol_specific_data",
       "target_field": "carp_data",
@@ -152,7 +152,7 @@
           }
         }
       ],
-      "order": 0,
+      "order": 12,
       "cursor_strategy": "cut",
       "source_field": "protocol_specific_data",
       "target_field": "tcp_data",
@@ -164,7 +164,7 @@
       "title": "pfsense icmp-data",
       "extractor_type": "copy_input",
       "converters": [],
-      "order": 0,
+      "order": 14,
       "cursor_strategy": "cut",
       "source_field": "protocol_specific_data",
       "target_field": "icmp_data",
@@ -176,7 +176,7 @@
       "title": "pfsense icmp-type-data",
       "extractor_type": "grok",
       "converters": [],
-      "order": 0,
+      "order": 15,
       "cursor_strategy": "copy",
       "source_field": "icmp_data",
       "target_field": "",
@@ -190,7 +190,7 @@
       "title": "pfsense icmp-type-echo-data",
       "extractor_type": "grok",
       "converters": [],
-      "order": 0,
+      "order": 16,
       "cursor_strategy": "copy",
       "source_field": "icmp_type_data",
       "target_field": "",
@@ -199,6 +199,18 @@
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "pfsense hbh-data",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 13,
+      "cursor_strategy": "cut",
+      "source_field": "protocol_specific_data",
+      "target_field": "hbh_data",
+      "extractor_config": {},
+      "condition_type": "regex",
+      "condition_value": "^HBH,"
     }
   ],
   "version": "3.3.5"
